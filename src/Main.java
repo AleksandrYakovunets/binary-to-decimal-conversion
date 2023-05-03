@@ -43,7 +43,17 @@ public class Main {
 
     public static ArrayList<Integer> transformationToInt(ArrayList<Character> listChars) throws Exception {
         ArrayList<Integer> newArrayNumber = new ArrayList<>(listChars.size());
-        for (int i = 0; i < listChars.size(); i++) {
+        for(Character list : listChars) {
+            if (list == '0') {
+                newArrayNumber.add(0);
+            } else if (list == '1') {
+                newArrayNumber.add(1);
+            } else {
+                throw new Exception("Число введено не в двоичной системе счисления!!!");
+            }
+        }
+
+        /*for (int i = 0; i < listChars.size(); i++) {
             if (listChars.get(i) == '0') {
                 newArrayNumber.add(0);
             } else if (listChars.get(i) == '1') {
@@ -52,7 +62,7 @@ public class Main {
             else {
                 throw new Exception("Число введено не в двоичной системе счисления!!!");
             }
-        }
+        }*/
         return newArrayNumber;
     }
 
